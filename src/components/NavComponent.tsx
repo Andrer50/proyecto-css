@@ -4,7 +4,7 @@ import Logo from "../../public/assets/Logo.png";
 import Link from "next/link";
 import { Menu, X } from "lucide-react"; // iconos
 
-export const NavComponent = () => {
+export default function NavComponent() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -87,6 +87,4 @@ export const NavComponent = () => {
       </section>
     </nav>
   );
-};
-
-export default NavComponent;
+}
