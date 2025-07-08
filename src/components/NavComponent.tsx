@@ -73,17 +73,22 @@ export default function NavComponent() {
     }
   `}
       >
-        {["Inicio", "Nosotros", "Catálogo", "Información"].map((text, i) => (
-          <Link
-            key={i}
-            href={`/${
-              text.toLowerCase() === "inicio" ? "" : text.toLowerCase()
-            }`}
-            onClick={() => setIsOpen(false)} // cerrar al hacer click
-          >
-            <span className="block">{text}</span>
-          </Link>
-        ))}
+        {["Inicio", "Nosotros", "Catálogo", "Información"].map((text, i) => {
+          const slug = text
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+          return (
+            <Link
+              key={i}
+              href={`/${slug === "inicio" ? "" : slug}`}
+              onClick={() => setIsOpen(false)} // cerrar al hacer click
+            >
+              <span className="block">{text}</span>
+            </Link>
+          );
+        })}
       </section>
     </nav>
   );
