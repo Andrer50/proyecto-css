@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import NavComponent from "@/components/NavComponent";
+import { Koulen, Marvel } from "next/font/google";
+import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const koulen = Koulen({
   subsets: ["latin"],
+  weight: "400",
+  variable: "--font-koulen",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const marvel = Marvel({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-marvel",
 });
 
 export const metadata: Metadata = {
@@ -24,11 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <NavComponent></NavComponent>
+    <html lang="en" className={`${koulen.variable} ${marvel.variable}`}>
+      <body>
+        <NavComponent />
         {children}
       </body>
     </html>

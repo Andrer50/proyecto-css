@@ -42,7 +42,10 @@ export default function Home() {
           {/* Contenedor principal de fondo */}
           <section className="absolute inset-0 w-full h-full">
             {/* TEXTO ENCIMA */}
-            <section className="absolute inset-0 z-20 flex justify-center items-center">
+            <section
+              className="absolute inset-0 z-20 flex justify-center items-center"
+              data-aos="zoom-in"
+            >
               <h1 className=" text-center text-gray-800 text-5xl font-bold pt-[100%] lg:pt-[35%]">
                 Bienvenido a FootStar
               </h1>

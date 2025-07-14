@@ -36,7 +36,7 @@ export default function NavComponent() {
       </figure>
 
       {/* Menú en escritorio */}
-      <ul className="hidden md:flex text-white md:text-[1.2em] xl:text-[1.3em] gap-[2em]">
+      <ul className=" hidden md:flex text-white md:text-[1.2em] xl:text-[1.3em] gap-[2em]">
         {["Inicio", "Nosotros", "Catálogo", "Información"].map((text, i) => {
           // función para quitar tildes y pasar a minúsculas
           const slug = text
@@ -66,7 +66,7 @@ export default function NavComponent() {
 
       {/* Menú desplegable en móviles */}
       <section
-        className={`absolute top-full left-0 w-full bg-gray-900/70 shadow-md backdrop-blur-md text-white text-[2em] flex flex-col items-center gap-4 py-6 md:hidden
+        className={`absolute top-full left-0 w-full bg-gray-900/70 shadow-md backdrop-blur-md text-white text-[1.5em] flex flex-col items-center gap-4 py-6 md:hidden
     transition-all duration-300 ease-in-out
     ${
       isOpen ? "opacity-100 max-h-[500px]" : "opacity-0 max-h-0 overflow-hidden"
